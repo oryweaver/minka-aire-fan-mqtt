@@ -61,8 +61,8 @@ mqtt:
   fan:
   - name: "Bedroom Fan"
     unique_id: private
-    state_topic: "home/cc1101/BRfan/state"
-    command_topic: "home/cc1101/BRfan/command"
+    state_topic: "home/minka-aire/<fan_id>/state"
+    command_topic: "home/minka-aire/<fan_id>/command"
     preset_modes:
       - 'off'
       - 'one'
@@ -71,17 +71,17 @@ mqtt:
       - 'four'
       - 'five'
       - 'six'
-    preset_mode_command_topic: "home/minka-aire/BRfan/speed/set"
-    preset_mode_state_topic: "home/minka-aire/BRfan/speed/state"
-    direction_command_topic: "home/minka-aire/BRfan/dir"
-    direction_state_topic: "home/minka-aire/BRfan/dirState"
+    preset_mode_command_topic: "home/minka-aire/<fan_id>/speed/set"
+    preset_mode_state_topic: "home/minka-aire/<fan_id>/speed/state"
+    direction_command_topic: "home/minka-aire/<fan_id>/dir"
+    direction_state_topic: "home/minka-aire/<fan_id>/dirState"
     availability_topic: "home/minka-aire/availability"
 
   light:
   - name: "Bedroom Fan Light"
     unique_id: private
-    state_topic: "home/minka-aire/BRfan/light/state"
-    command_topic: "home/minka-aire/BRfan/light/command"
+    state_topic: "home/minka-aire/<fan_id>/light/state"
+    command_topic: "home/minka-aire/<fan_id>/light/command"
     availability_topic: "home/minka-aire/availability"
     state_value_template: "{{ states('input_boolean.rf_light_state') }}"
 ```
