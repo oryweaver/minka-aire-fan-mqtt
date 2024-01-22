@@ -7,6 +7,11 @@ This is based on Ben Owen's work for the [Hampton Bay Fan MQTT](https://github.c
 Notable differences bewtween the Hampton Bay and Minka Aire is that it uses 5 dip switches instead of 4. The rest of the logic works very similarly.
 Fan control is not limited to a single dip switch setting, so up to 25 fans can be controlled with one ESP8266.
 
+The code transmitted by the remote is made up of three sections that total 12 bits. The first five bits of the code are the inverse of the identification dip positions. So if the dip switches are; on, off, off, off, off. The code would start with 01111. The next is a single bit to represent the position of the dimmer on/off switch. This dip switch has ‘ON’ on the bottom rather than the top like the identification switches. The ‘ON’ position corresponds with a 1 being sent by the remote. 
+
+Based on the image bellow, all messages sent from the remote in this picture would start with 011111. The remaining six bits would correspond a particular button.
+![alt text](https://github.com/oryweaver/minka-aire-fan-mqtt/blob/master/images/RC400_remote.jpg)
+
 ## Dependencies
 This project uses the following libraries that are available through the Arduino IDE
 * [SmartRC-CC1101-Driver-Lib](https://github.com/LSatan/SmartRC-CC1101-Driver-Lib) by LSatan
