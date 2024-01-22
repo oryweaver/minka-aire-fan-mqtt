@@ -11,19 +11,21 @@ The code transmitted by the remote is made up of three sections that total 12 bi
 
 The rest of the code is made up of these commands from the buttons:
 
-Light:
-Up (On)	   110110
-Down (Off)	111110
+|Light:| |
+|-|-|
+|Up (On)|110110|
+|Down (Off)|	111110|
 
-Fan:
-Off		      111101
-1		        110111
-2		        110101
-3		        101111
-4		        100111
-5		        011101
-6	 	       011111
-Reverse	   111011
+|Fan:| |
+|-|-|
+|Off|111101|
+|1|110111|
+|2|110101|
+|3|101111|
+|4|100111|
+|5|011101|
+|6|011111|
+|Reverse|111011|
 
 Based on the image bellow, all messages sent from the remote in this picture would start with 011111. The remaining six bits would correspond a particular button.
 ![alt text](https://github.com/oryweaver/minka-aire-fan-mqtt/blob/master/images/RC400_remote.jpg)
