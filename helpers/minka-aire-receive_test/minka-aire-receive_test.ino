@@ -17,10 +17,6 @@
 // 303.808 determined from FCC Filing https://fccid.io/2AHC3CR400T
 #define FREQUENCY     303.808
 
-// RC-switch settings
-#define RF_PROTOCOL 6
-#define RF_REPEATS  8
-
 int long value;      // int to save value
 int bits;           // int to save bit number
 int prot;          // int to save Protocol number
