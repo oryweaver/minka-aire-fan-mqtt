@@ -9,6 +9,22 @@ Fan control is not limited to a single dip switch setting, so up to 25 fans can 
 
 The code transmitted by the remote is made up of three sections that total 12 bits. The first five bits of the code are the inverse of the identification dip positions. So if the dip switches are; on, off, off, off, off. The code would start with 01111. The next is a single bit to represent the position of the dimmer on/off switch. This dip switch has ‘ON’ on the bottom rather than the top like the identification switches. The ‘ON’ position corresponds with a 1 being sent by the remote. 
 
+The rest of the code is made up of these commands from the buttons:
+
+Light:
+Up (On)	   110110
+Down (Off)	111110
+
+Fan:
+Off		      111101
+1		        110111
+2		        110101
+3		        101111
+4		        100111
+5		        011101
+6	 	       011111
+Reverse	   111011
+
 Based on the image bellow, all messages sent from the remote in this picture would start with 011111. The remaining six bits would correspond a particular button.
 ![alt text](https://github.com/oryweaver/minka-aire-fan-mqtt/blob/master/images/RC400_remote.jpg)
 
